@@ -29,6 +29,7 @@ To use this plugin, you need to configure Google oAuth credentials so the plugin
 - direct video upload to YouTube from CPTs within the WordPress interface
 - selection of existing YouTube videos, filtered by playlists
 - support for "unlisted" video privacy, making this plugin ideal for managing private or exclusive videos tied to specific content
+- support for logging with [Wonolog](https://github.com/inpsyde/Wonolog) ^2.x, if available
 - use official [ACF Example Field Type](https://github.com/AdvancedCustomFields/acf-example-field-type)
 - made with [Vanilla JS](http://vanilla-js.com) (no jQuery)
 - autoload classes with Composer and PSR-4
