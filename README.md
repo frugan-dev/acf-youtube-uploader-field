@@ -34,6 +34,7 @@ To use this plugin, you need to configure Google oAuth credentials so the plugin
 - made with [Vanilla JS](http://vanilla-js.com) (no jQuery)
 - autoload classes with Composer and PSR-4
 - support ACF nested repeater
+- translations managed via [Crowdin](https://crowdin.com/project/acf-youtube-uploader-field)
 
 ## Installation
 
