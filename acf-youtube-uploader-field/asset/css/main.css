@@ -1,0 +1,7 @@
+.youtube_uploader__wrapper .youtube_uploader__spinner {
+    display: none;
+}
+.youtube_uploader__wrapper .youtube_uploader__spinner .spinner {
+    float: none;
+    margin: 0;
+}

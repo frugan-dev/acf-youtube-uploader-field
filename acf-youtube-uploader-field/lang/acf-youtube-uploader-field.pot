@@ -1,0 +1,284 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: acf-youtube-uploader-field\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2024-10-25 22:54+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_ex;_x;_ex;_n:1,2;_n:1,2,4c;_nx:1,2;_nx:1,2,4c;_n_noop:1,2;_n_noop:1,2,4c;_nx_noop:1,2;_nx_noop:1,2,4c;"
+"esc_html__;esc_html_e;esc_html_x;esc_attr__;esc_attr_e;esc_attr_x\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: *.rst\n"
+
+#: src/AcfYoutubeUploaderField.php:62
+msgid "ACF YouTube Uploader Field"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:69
+msgid "YouTube uploader"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:79
+msgid "Advanced Custom Fields YouTube video uploader field via API"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:117
+msgid "Before uploading your video, make sure you:"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:118 src/AcfYoutubeUploaderField.php:119
+#, php-format
+msgid "Enter a \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:118 src/AcfYoutubeUploaderField.php:475
+msgid "Title"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:119
+msgid "Description"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:120
+#, php-format
+msgid "Select a \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:120
+msgid "Video file"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:121
+msgid "Preparing to upload your file"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:122
+msgid "Loading"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:123
+msgid "Wait please"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:124
+msgid "Video uploaded successfully."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:125
+msgid "Error while uploading."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:126
+msgid "Network error while uploading."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:127
+msgid "The following error occurred:"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:128
+msgid "It is recommended to save the post by clicking the \"Publish\" button."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:129
+msgid "Attention"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:130
+msgid "There was a technical problem, please try again later."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:131 src/AcfYoutubeUploaderField.php:363
+msgid "select"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:175
+msgid "Category ID"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:179 src/AcfYoutubeUploaderField.php:196 src/AcfYoutubeUploaderField.php:211
+#: src/AcfYoutubeUploaderField.php:231 src/AcfYoutubeUploaderField.php:246 src/AcfYoutubeUploaderField.php:261
+#: src/AcfYoutubeUploaderField.php:276 src/AcfYoutubeUploaderField.php:291
+#, php-format
+msgid "Default: %1$s"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:192
+msgid "Tags"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:207
+msgid "Privacy status"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:217
+msgid "Unlisted"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:218
+msgid "Private"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:219
+msgid "Public"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:227
+msgid "Made for kids"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:231 src/AcfYoutubeUploaderField.php:246 src/AcfYoutubeUploaderField.php:261
+#: src/AcfYoutubeUploaderField.php:276 src/AcfYoutubeUploaderField.php:291
+msgid "Yes"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:231 src/AcfYoutubeUploaderField.php:246 src/AcfYoutubeUploaderField.php:261
+#: src/AcfYoutubeUploaderField.php:276 src/AcfYoutubeUploaderField.php:291
+msgid "No"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:242
+msgid "Allow upload"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:257
+msgid "Allow select"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:272
+msgid "Update YouTube video on post update"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:287
+msgid "Delete YouTube video on post delete"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:328
+msgid "Upload via API"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:336
+msgid "Select from channel"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:347
+msgid "Upload"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:360
+msgid "Playlist"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:375
+msgid "Video"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:380
+msgid "No playlists available"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:393
+msgid "You are not logged in"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:457 src/AcfYoutubeUploaderField.php:475 src/AcfYoutubeUploaderField.php:914
+#: src/AcfYoutubeUploaderField.php:919 src/AcfYoutubeUploaderField.php:980 src/AcfYoutubeUploaderField.php:985
+#: src/AcfYoutubeUploaderField.php:994 src/AcfYoutubeUploaderField.php:1014 src/AcfYoutubeUploaderField.php:1025
+#, php-format
+msgid "Empty field \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:489 src/AcfYoutubeUploaderField.php:959
+#, php-format
+msgid "Video \"%1$s\" retrieved successfully"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:492
+msgid "This video is not associated with your authorized YouTube account"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:544
+#, php-format
+msgid "Video \"%1$s\" updated successfully"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:571
+#, php-format
+msgid "Video \"%1$s\" deleted successfully"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:613
+msgid "Successfully logged out from YouTube."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:654 src/AcfYoutubeUploaderField.php:696
+msgid "Authorize App"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:666
+msgid "Logout from YouTube"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:780
+msgid "Missing or wrong OAuth credentials."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:794
+msgid "App not authorized, contact your system administrator."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:811
+msgid "App authorized! You can now upload videos to YouTube."
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:823
+msgid "Authorize the app to upload videos to YouTube:"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:833
+#, php-format
+msgid "App authorized! You are logged in as: %1$s"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:870
+msgid "Playlists retrieved successfully"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:925 src/AcfYoutubeUploaderField.php:1020
+#, php-format
+msgid "Unable to retrieve field \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:962
+#, php-format
+msgid "Unable to retrieve \"%1$s\" from response headers"
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:989
+#, php-format
+msgid "Insufficient permissions to save video \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:1002
+#, php-format
+msgid "Unable to save video \"%1$s\" to field \"%2$s\" in post ID \"%3$d\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:1038
+#, php-format
+msgid "Videos retrieved successfully by playlist ID \"%1$s\""
+msgstr ""
+
+#: src/AcfYoutubeUploaderField.php:1069
+#, php-format
+msgid "Unable to retrieve videos by playlist ID \"%1$s\""
+msgstr ""
