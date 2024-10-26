@@ -95,7 +95,7 @@ class AcfYoutubeUploaderField extends \acf_field
         // Defaults for your custom user-facing settings for this field type.
         $this->defaults = [
             'category_id' => 22, // People & Blogs
-            'tags' => str_replace('www.', '', $_SERVER['HTTP_HOST']),
+            'tags' => !empty($_SERVER['HTTP_HOST']) ? str_replace('www.', '', $_SERVER['HTTP_HOST']) : '',
             'privacy_status' => 'unlisted',
             'made_for_kids' => false,
             'allow_upload' => true,
@@ -904,6 +904,7 @@ class AcfYoutubeUploaderField extends \acf_field
     // https://stackoverflow.com/a/74402514/3929620
     // https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol
     // https://github.com/youtube/api-samples/blob/master/php/resumable_upload.php
+    // https://github.com/googleapis/google-api-php-client
     // https://developers.google.com/youtube/v3/getting-started#quota
     // https://developers.google.com/youtube/v3/determine_quota_cost
     public function wp_ajax_get_youtube_upload_url(): void
