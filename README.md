@@ -155,6 +155,12 @@ Once installed:
 5. In the **Authorized redirect URIs** field, enter your WordPress site's callback URL (e.g., `https://domain.tld/wp-admin/`).
 6. Obtain the `Client ID` and `Client Secret`.
 
+#### Limitations
+
+If you use the API upload mode, please note this important notice listed [here](https://developers.google.com/youtube/v3/docs/videos/insert):
+
+> All videos uploaded via the `videos.insert` endpoint from unverified API projects created after July 28, 2020, will be restricted to private viewing mode. To lift this restriction, each API project must undergo an audit to verify compliance with the YouTube Terms of Service.
+
 ### Setting in wp-config.php
 
 Add the following lines to `wp-config.php` to define the oAuth credentials:

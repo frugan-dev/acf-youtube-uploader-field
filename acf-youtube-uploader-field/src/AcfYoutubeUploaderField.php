@@ -59,14 +59,14 @@ class AcfYoutubeUploaderField extends \acf_field
          */
         $this->name = 'youtube_uploader';
 
-        $this->title = __('ACF YouTube Uploader Field', FRUGAN_AYUF_NAME);
+        $this->title = __('ACF YouTube Uploader Field', 'acf-youtube-uploader-field');
 
         /*
          * Field type label.
          *
          * For public-facing UI. May contain spaces.
          */
-        $this->label = __('YouTube uploader', FRUGAN_AYUF_NAME);
+        $this->label = __('YouTube uploader', 'acf-youtube-uploader-field');
 
         // The category the field appears within in the field type picker.
         $this->category = 'basic'; // basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
@@ -76,7 +76,7 @@ class AcfYoutubeUploaderField extends \acf_field
          *
          * For field descriptions. May contain spaces.
          */
-        $this->description = __('Advanced Custom Fields YouTube video uploader field via API', FRUGAN_AYUF_NAME);
+        $this->description = __('Advanced Custom Fields YouTube video uploader field via API', 'acf-youtube-uploader-field');
 
         /*
          * Field type Doc URL.
@@ -95,7 +95,7 @@ class AcfYoutubeUploaderField extends \acf_field
         // Defaults for your custom user-facing settings for this field type.
         $this->defaults = [
             'category_id' => 22, // People & Blogs
-            'tags' => !empty($_SERVER['HTTP_HOST']) ? str_replace('www.', '', $_SERVER['HTTP_HOST']) : '',
+            'tags' => !empty($_SERVER['HTTP_HOST']) ? str_replace('www.', '', wp_unslash($_SERVER['HTTP_HOST'])) : '',
             'privacy_status' => 'unlisted',
             'made_for_kids' => false,
             'allow_upload' => true,
@@ -114,21 +114,24 @@ class AcfYoutubeUploaderField extends \acf_field
          * ```
          */
         $this->l10n = [
-            'before_uploading' => __('Before uploading your video, make sure you:', FRUGAN_AYUF_NAME),
-            'enter_title' => \sprintf(__('Enter a "%1$s"', FRUGAN_AYUF_NAME), __('Title', FRUGAN_AYUF_NAME)),
-            'enter_description' => \sprintf(__('Enter a "%1$s"', FRUGAN_AYUF_NAME), __('Description', FRUGAN_AYUF_NAME)),
-            'select_video_file' => \sprintf(__('Select a "%1$s"', FRUGAN_AYUF_NAME), __('Video file', FRUGAN_AYUF_NAME)),
-            'preparing_upload' => __('Preparing to upload your file', FRUGAN_AYUF_NAME),
-            'loading' => __('Loading', FRUGAN_AYUF_NAME),
-            'wait_please' => __('Wait please', FRUGAN_AYUF_NAME),
-            'video_uploaded_successfully' => __('Video uploaded successfully.', FRUGAN_AYUF_NAME),
-            'error_while_uploading' => __('Error while uploading.', FRUGAN_AYUF_NAME),
-            'network_error_while_uploading' => __('Network error while uploading.', FRUGAN_AYUF_NAME),
-            'following_error' => __('The following error occurred:', FRUGAN_AYUF_NAME),
-            'recommended_save_post' => __('It is recommended to save the post by clicking the "Publish" button.', FRUGAN_AYUF_NAME),
-            'attention' => __('Attention', FRUGAN_AYUF_NAME),
-            'technical_problem' => __('There was a technical problem, please try again later.', FRUGAN_AYUF_NAME),
-            'select' => __('select', FRUGAN_AYUF_NAME),
+            'before_uploading' => __('Before uploading your video, make sure you:', 'acf-youtube-uploader-field'),
+            // translators: %s: Title
+            'enter_title' => \sprintf(__('Enter a "%1$s"', 'acf-youtube-uploader-field'), __('Title', 'acf-youtube-uploader-field')),
+            // translators: %s: Description
+            'enter_description' => \sprintf(__('Enter a "%1$s"', 'acf-youtube-uploader-field'), __('Description', 'acf-youtube-uploader-field')),
+            // translators: %s: Video file
+            'select_video_file' => \sprintf(__('Select a "%1$s"', 'acf-youtube-uploader-field'), __('Video file', 'acf-youtube-uploader-field')),
+            'preparing_upload' => __('Preparing to upload your file', 'acf-youtube-uploader-field'),
+            'loading' => __('Loading', 'acf-youtube-uploader-field'),
+            'wait_please' => __('Wait please', 'acf-youtube-uploader-field'),
+            'video_uploaded_successfully' => __('Video uploaded successfully.', 'acf-youtube-uploader-field'),
+            'error_while_uploading' => __('Error while uploading.', 'acf-youtube-uploader-field'),
+            'network_error_while_uploading' => __('Network error while uploading.', 'acf-youtube-uploader-field'),
+            'following_error' => __('The following error occurred:', 'acf-youtube-uploader-field'),
+            'recommended_save_post' => __('It is recommended to save the post by clicking the "Publish" button.', 'acf-youtube-uploader-field'),
+            'attention' => __('Attention', 'acf-youtube-uploader-field'),
+            'technical_problem' => __('There was a technical problem, please try again later.', 'acf-youtube-uploader-field'),
+            'select' => __('select', 'acf-youtube-uploader-field'),
         ];
 
         $this->env = [
@@ -172,11 +175,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Category ID', FRUGAN_AYUF_NAME),
+                'label' => __('Category ID', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.$this->defaults['category_id'].'</code>'),
+                        // translators: %s: category_id
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.$this->defaults['category_id'].'</code>'),
                     ]
                 ),
                 'type' => 'number',
@@ -189,11 +193,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Tags', FRUGAN_AYUF_NAME),
+                'label' => __('Tags', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.$this->defaults['tags'].'</code>'),
+                        // translators: %s: tags
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.$this->defaults['tags'].'</code>'),
                     ]
                 ),
                 'type' => 'text',
@@ -204,19 +209,20 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Privacy status', FRUGAN_AYUF_NAME),
+                'label' => __('Privacy status', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.$this->defaults['privacy_status'].'</code>'),
+                        // translators: %s: privacy_status
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.$this->defaults['privacy_status'].'</code>'),
                     ]
                 ),
                 'type' => 'select',
                 'name' => 'privacy_status',
                 'choices' => [
-                    'unlisted' => __('Unlisted', FRUGAN_AYUF_NAME),
-                    'private' => __('Private', FRUGAN_AYUF_NAME),
-                    'public' => __('Public', FRUGAN_AYUF_NAME),
+                    'unlisted' => __('Unlisted', 'acf-youtube-uploader-field'),
+                    'private' => __('Private', 'acf-youtube-uploader-field'),
+                    'public' => __('Public', 'acf-youtube-uploader-field'),
                 ],
             ]
         );
@@ -224,11 +230,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Made for kids', FRUGAN_AYUF_NAME),
+                'label' => __('Made for kids', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.($this->defaults['made_for_kids'] ? __('Yes', FRUGAN_AYUF_NAME) : __('No', FRUGAN_AYUF_NAME)).'</code>'),
+                        // translators: %s: made_for_kids
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.($this->defaults['made_for_kids'] ? __('Yes', 'acf-youtube-uploader-field') : __('No', 'acf-youtube-uploader-field')).'</code>'),
                     ]
                 ),
                 'type' => 'true_false',
@@ -239,11 +246,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Allow upload', FRUGAN_AYUF_NAME),
+                'label' => __('Allow upload', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.($this->defaults['allow_upload'] ? __('Yes', FRUGAN_AYUF_NAME) : __('No', FRUGAN_AYUF_NAME)).'</code>'),
+                        // translators: %s: allow_upload
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.($this->defaults['allow_upload'] ? __('Yes', 'acf-youtube-uploader-field') : __('No', 'acf-youtube-uploader-field')).'</code>'),
                     ]
                 ),
                 'type' => 'true_false',
@@ -254,11 +262,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Allow select', FRUGAN_AYUF_NAME),
+                'label' => __('Allow select', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.($this->defaults['allow_select'] ? __('Yes', FRUGAN_AYUF_NAME) : __('No', FRUGAN_AYUF_NAME)).'</code>'),
+                        // translators: %s: allow_select
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.($this->defaults['allow_select'] ? __('Yes', 'acf-youtube-uploader-field') : __('No', 'acf-youtube-uploader-field')).'</code>'),
                     ]
                 ),
                 'type' => 'true_false',
@@ -269,11 +278,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Update YouTube video on post update', FRUGAN_AYUF_NAME),
+                'label' => __('Update YouTube video on post update', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.($this->defaults['api_update_on_post_update'] ? __('Yes', FRUGAN_AYUF_NAME) : __('No', FRUGAN_AYUF_NAME)).'</code>'),
+                        // translators: %s: api_update_on_post_update
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.($this->defaults['api_update_on_post_update'] ? __('Yes', 'acf-youtube-uploader-field') : __('No', 'acf-youtube-uploader-field')).'</code>'),
                     ]
                 ),
                 'type' => 'true_false',
@@ -284,11 +294,12 @@ class AcfYoutubeUploaderField extends \acf_field
         acf_render_field_setting(
             $field,
             [
-                'label' => __('Delete YouTube video on post delete', FRUGAN_AYUF_NAME),
+                'label' => __('Delete YouTube video on post delete', 'acf-youtube-uploader-field'),
                 'instructions' => implode(
                     '<br>'.PHP_EOL,
                     [
-                        \sprintf(__('Default: %1$s', FRUGAN_AYUF_NAME), '<code>'.($this->defaults['api_delete_on_post_delete'] ? __('Yes', FRUGAN_AYUF_NAME) : __('No', FRUGAN_AYUF_NAME)).'</code>'),
+                        // translators: %s: api_delete_on_post_delete
+                        \sprintf(__('Default: %1$s', 'acf-youtube-uploader-field'), '<code>'.($this->defaults['api_delete_on_post_delete'] ? __('Yes', 'acf-youtube-uploader-field') : __('No', 'acf-youtube-uploader-field')).'</code>'),
                     ]
                 ),
                 'type' => 'true_false',
@@ -325,7 +336,7 @@ class AcfYoutubeUploaderField extends \acf_field
                         <?php if (!empty($field['allow_upload'])) { ?>
                             <li>
                                 <a href="#<?php echo esc_attr($field['key']); ?>__tab_1">
-                                    <?php esc_html_e('Upload via API', FRUGAN_AYUF_NAME); ?>
+                                    <?php esc_html_e('Upload via API', 'acf-youtube-uploader-field'); ?>
                                 </a>
                             </li>
                         <?php }
@@ -333,7 +344,7 @@ class AcfYoutubeUploaderField extends \acf_field
                         <?php if (!empty($field['allow_select'])) { ?>
                             <li>
                                 <a href="#<?php echo esc_attr($field['key']); ?>__tab_2">
-                                    <?php esc_html_e('Select from channel', FRUGAN_AYUF_NAME); ?>
+                                    <?php esc_html_e('Select from channel', 'acf-youtube-uploader-field'); ?>
                                 </a>
                             </li>
                          <?php }
@@ -344,7 +355,7 @@ class AcfYoutubeUploaderField extends \acf_field
                         <div id="<?php echo esc_attr($field['key']); ?>__tab_1">
                             <input type="file" class="<?php echo esc_attr($field['key']); ?>__file_input" name="<?php echo esc_attr($field['key']); ?>__file_input" lang="<?php echo esc_attr(get_locale()); ?>" accept="video/*">
                             <button type="button" class="<?php echo esc_attr($field['key']); ?>__button button button-secondary">
-			                	<?php esc_html_e('Upload', FRUGAN_AYUF_NAME); ?>
+			                	<?php esc_html_e('Upload', 'acf-youtube-uploader-field'); ?>
 			                </button>
                         </div>
                     <?php }
@@ -357,10 +368,10 @@ class AcfYoutubeUploaderField extends \acf_field
                         if (!empty($result['items'])) { ?>
                                 <p>
                                     <label for="<?php echo esc_attr($field['key']); ?>__playlist_select">
-                                        <?php esc_html_e('Playlist', FRUGAN_AYUF_NAME); ?>
+                                        <?php esc_html_e('Playlist', 'acf-youtube-uploader-field'); ?>
                                     </label>
                                     <select class="<?php echo esc_attr($field['key']); ?>__playlist_select" name="<?php echo esc_attr($field['key']); ?>__playlist_select">
-                                        <option value="">- <?php _e('select', FRUGAN_AYUF_NAME); ?>- </option>
+                                        <option value="">- <?php esc_html_e('select', 'acf-youtube-uploader-field'); ?> -</option>
                                         <?php foreach ($result['items'] as $item) { ?>
                                             <option value="<?php echo esc_attr($item['id']); ?>">
                                                 <?php echo esc_html($item['title']); ?> (<?php echo esc_html($item['id']); ?>)
@@ -372,12 +383,12 @@ class AcfYoutubeUploaderField extends \acf_field
 
                                 <p>
                                     <label for="<?php echo esc_attr($field['key']); ?>__video_select">
-                                        <?php esc_html_e('Video', FRUGAN_AYUF_NAME); ?>
+                                        <?php esc_html_e('Video', 'acf-youtube-uploader-field'); ?>
                                     </label>
                                     <select class="<?php echo esc_attr($field['key']); ?>__video_select" name="<?php echo esc_attr($field['key']); ?>__video_select"></select>
                                 </p>
                             <?php } else { ?>
-                                <p><?php esc_html_e('No playlists available', FRUGAN_AYUF_NAME); ?></p>
+                                <p><?php esc_html_e('No playlists available', 'acf-youtube-uploader-field'); ?></p>
                             <?php }
                             ?>
                         </div>
@@ -390,7 +401,7 @@ class AcfYoutubeUploaderField extends \acf_field
 			        <span class="spinner is-active"></span>
 			    </p>
 <?php } else { ?>
-                <p><?php esc_html_e('You are not logged in', FRUGAN_AYUF_NAME); ?></p>
+                <p><?php esc_html_e('You are not logged in', 'acf-youtube-uploader-field'); ?></p>
             <?php }
 ?>
 		</div>
@@ -427,7 +438,10 @@ class AcfYoutubeUploaderField extends \acf_field
             FRUGAN_AYUF_NAME,
             $url.'asset/js/main'.($cache_busting ? '.'.filemtime($path.'asset/js/main.js') : '').'.js',
             ['acf-input'],
-            $version
+            $version,
+            [
+                'in_footer' => true,
+            ]
         );
 
         // $object_name is the name of the variable which will contain the data.
@@ -454,7 +468,8 @@ class AcfYoutubeUploaderField extends \acf_field
     {
         try {
             if (empty($value) && !empty($field['required'])) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), $field['label']));
+                // translators: %s: label
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), $field['label']));
             }
 
             if (!empty($value)) {
@@ -472,11 +487,13 @@ class AcfYoutubeUploaderField extends \acf_field
                     }
 
                     if (empty($title)) {
-                        throw new \LengthException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), __('Title', FRUGAN_AYUF_NAME)));
+                        // translators: %s: Title
+                        throw new \LengthException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), __('Title', 'acf-youtube-uploader-field')));
                     }
 
                     /*if (empty($excerpt)) {
-                        throw new \LengthException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), __('Excerpt', FRUGAN_AYUF_NAME)));
+                        // translators: %s: Excerpt
+                        throw new \LengthException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), __('Excerpt', 'acf-youtube-uploader-field')));
                     }*/
                 }
 
@@ -486,10 +503,11 @@ class AcfYoutubeUploaderField extends \acf_field
                 // Quota impact: A call to this method has a quota cost of 1 unit.
                 $response = $googleServiceYouTube->videos->listVideos('snippet', ['id' => $value]);
 
-                $this->log('debug', \sprintf(__('Video "%1$s" retrieved successfully', FRUGAN_AYUF_NAME), $value), ['response' => $response]);
+                // translators: %s: value
+                $this->log('debug', \sprintf(__('Video "%1$s" retrieved successfully', 'acf-youtube-uploader-field'), $value), ['response' => $response]);
 
                 if (empty($response->getItems())) {
-                    throw new \Exception(__('This video is not associated with your authorized YouTube account', FRUGAN_AYUF_NAME));
+                    throw new \Exception(__('This video is not associated with your authorized YouTube account', 'acf-youtube-uploader-field'));
                 }
             }
         } catch (\InvalidArgumentException|\LengthException $exception) {
@@ -541,7 +559,8 @@ class AcfYoutubeUploaderField extends \acf_field
                 // Quota impact: A call to this method has a quota cost of 50 units.
                 $response = $googleServiceYouTube->videos->update('snippet', $googleServiceYouTubeVideo);
 
-                $this->log('info', \sprintf(__('Video "%1$s" updated successfully', FRUGAN_AYUF_NAME), $value), ['response' => $response]);
+                // translators: %s: value
+                $this->log('info', \sprintf(__('Video "%1$s" updated successfully', 'acf-youtube-uploader-field'), $value), ['response' => $response]);
             }
         } catch (\Exception $exception) {
             $this->log('error', $exception, ['response' => $response ?? null]);
@@ -568,7 +587,8 @@ class AcfYoutubeUploaderField extends \acf_field
                         // Quota impact: A call to this method has a quota cost of 50 units.
                         $response = $googleServiceYouTube->videos->delete($field['value']);
 
-                        $this->log('info', \sprintf(__('Video "%1$s" deleted successfully', FRUGAN_AYUF_NAME), $field['value']), ['response' => $response]);
+                        // translators: %s: value
+                        $this->log('info', \sprintf(__('Video "%1$s" deleted successfully', 'acf-youtube-uploader-field'), $field['value']), ['response' => $response]);
                     } catch (\Exception $exception) {
                         $this->log('error', $exception, ['response' => $response ?? null]);
                     }
@@ -610,7 +630,7 @@ class AcfYoutubeUploaderField extends \acf_field
 
             add_action('admin_notices', static function (): void {
                 echo '<div class="notice notice-success is-dismissible">';
-                echo '<p><strong>'.esc_html__('Successfully logged out from YouTube.', FRUGAN_AYUF_NAME).'</strong></p>';
+                echo '<p><strong>'.esc_html__('Successfully logged out from YouTube.', 'acf-youtube-uploader-field').'</strong></p>';
                 echo '</div>';
             });
         }
@@ -649,28 +669,28 @@ class AcfYoutubeUploaderField extends \acf_field
         switch ($status) {
             case 'authorize':
                 echo '<div class="notice notice-warning is-dismissible">';
-                echo '<h3>'.$this->label.'</h3>';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
-                echo '<p><a href="'.esc_url($oauth['auth_url']).'" class="button button-primary">'.esc_html__('Authorize App', FRUGAN_AYUF_NAME).'</a></p>';
+                echo '<h3>'.esc_html($this->label).'</h3>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
+                echo '<p><a href="'.esc_url($oauth['auth_url']).'" class="button button-primary">'.esc_html__('Authorize App', 'acf-youtube-uploader-field').'</a></p>';
                 echo '</div>';
 
                 break;
 
             case 'authorized':
                 echo '<div class="notice notice-success">';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
                 echo '</div>';
 
                 echo '<form method="post" action="">';
                 echo '<input type="hidden" name="action" value="logout">';
-                submit_button(__('Logout from YouTube', FRUGAN_AYUF_NAME));
+                submit_button(__('Logout from YouTube', 'acf-youtube-uploader-field'));
                 echo '</form>';
 
                 break;
 
             case 'error':
                 echo '<div class="notice notice-error">';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
                 echo '</div>';
 
                 break;
@@ -691,25 +711,25 @@ class AcfYoutubeUploaderField extends \acf_field
         switch ($status) {
             case 'authorize':
                 echo '<div class="notice notice-warning is-dismissible">';
-                echo '<h3>'.$this->label.'</h3>';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
-                echo '<p><a href="'.esc_url($oauth['auth_url']).'" class="button button-primary">'.esc_html__('Authorize App', FRUGAN_AYUF_NAME).'</a></p>';
+                echo '<h3>'.esc_html($this->label).'</h3>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
+                echo '<p><a href="'.esc_url($oauth['auth_url']).'" class="button button-primary">'.esc_html__('Authorize App', 'acf-youtube-uploader-field').'</a></p>';
                 echo '</div>';
 
                 break;
 
             case 'success':
                 echo '<div class="notice notice-success is-dismissible">';
-                echo '<h3>'.$this->label.'</h3>';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
+                echo '<h3>'.esc_html($this->label).'</h3>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
                 echo '</div>';
 
                 break;
 
             case 'error':
                 echo '<div class="notice notice-error">';
-                echo '<h3>'.$this->label.'</h3>';
-                echo '<p><strong>'.$oauth['message'].'</strong></p>';
+                echo '<h3>'.esc_html($this->label).'</h3>';
+                echo '<p><strong>'.esc_html($oauth['message']).'</strong></p>';
                 echo '</div>';
 
                 break;
@@ -777,7 +797,7 @@ class AcfYoutubeUploaderField extends \acf_field
         if (!\defined('FRUGAN_AYUF_GOOGLE_OAUTH_CLIENT_ID') || !\defined('FRUGAN_AYUF_GOOGLE_OAUTH_CLIENT_SECRET') || empty(FRUGAN_AYUF_GOOGLE_OAUTH_CLIENT_ID) || empty(FRUGAN_AYUF_GOOGLE_OAUTH_CLIENT_SECRET)) {
             $data = [
                 'status' => 'error',
-                'message' => __('Missing or wrong OAuth credentials.', FRUGAN_AYUF_NAME),
+                'message' => __('Missing or wrong OAuth credentials.', 'acf-youtube-uploader-field'),
             ];
 
             $this->log('error', $data);
@@ -791,7 +811,7 @@ class AcfYoutubeUploaderField extends \acf_field
             if (!current_user_can('manage_options') || !current_user_can('manage_'.$this->name)) {
                 $data = [
                     'status' => 'error',
-                    'message' => __('App not authorized, contact your system administrator.', FRUGAN_AYUF_NAME),
+                    'message' => __('App not authorized, contact your system administrator.', 'acf-youtube-uploader-field'),
                 ];
 
                 $this->log('error', $data);
@@ -802,13 +822,13 @@ class AcfYoutubeUploaderField extends \acf_field
             $this->set_google_client();
 
             if (isset($_GET['code'])) {
-                $this->client->authenticate($_GET['code']);
+                $this->client->authenticate(wp_unslash($_GET['code']));
                 $this->set_access_token($this->client->getAccessToken());
                 update_option(FRUGAN_AYUF_NAME.'__access_token', $this->get_access_token());
 
                 $data = [
                     'status' => 'success',
-                    'message' => __('App authorized! You can now upload videos to YouTube.', FRUGAN_AYUF_NAME),
+                    'message' => __('App authorized! You can now upload videos to YouTube.', 'acf-youtube-uploader-field'),
                 ];
 
                 $this->log('info', $data);
@@ -820,7 +840,7 @@ class AcfYoutubeUploaderField extends \acf_field
 
             return [
                 'status' => 'authorize',
-                'message' => __('Authorize the app to upload videos to YouTube:', FRUGAN_AYUF_NAME),
+                'message' => __('Authorize the app to upload videos to YouTube:', 'acf-youtube-uploader-field'),
                 'auth_url' => $auth_url,
             ];
         }
@@ -830,7 +850,8 @@ class AcfYoutubeUploaderField extends \acf_field
 
         return [
             'status' => 'authorized',
-            'message' => \sprintf(__('App authorized! You are logged in as: %1$s', FRUGAN_AYUF_NAME), $user_info->email),
+            // translators: %s: email
+            'message' => \sprintf(__('App authorized! You are logged in as: %1$s', 'acf-youtube-uploader-field'), $user_info->email),
         ];
     }
 
@@ -867,7 +888,7 @@ class AcfYoutubeUploaderField extends \acf_field
             // Quota impact: A call to this method has a quota cost of 1 unit.
             $response = $googleServiceYouTube->playlists->listPlaylists('snippet,status', $params);
 
-            $this->log('debug', __('Playlists retrieved successfully', FRUGAN_AYUF_NAME), [
+            $this->log('debug', __('Playlists retrieved successfully', 'acf-youtube-uploader-field'), [
                 'privacy_status' => $privacy_status,
                 'response' => $response,
             ]);
@@ -912,18 +933,21 @@ class AcfYoutubeUploaderField extends \acf_field
         try {
             $post_id = isset($_POST['post_id']) ? (int) $_POST['post_id'] : 0;
             if (empty($post_id)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'post_id'));
+                // translators: %s: post_id
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'post_id'));
             }
 
             $field_key = isset($_POST['field_key']) ? sanitize_text_field($_POST['field_key']) : '';
             if (empty($field_key)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'field_key'));
+                // translators: %s: field_key
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'field_key'));
             }
 
             // https://support.advancedcustomfields.com/forums/topic/get-choices-from-field-without-post_id/
             $field = get_field_object($field_key);
             if (!$field) {
-                throw new \InvalidArgumentException(\sprintf(__('Unable to retrieve field "%1$s"', FRUGAN_AYUF_NAME), $field_key));
+                // translators: %s: field_key
+                throw new \InvalidArgumentException(\sprintf(__('Unable to retrieve field "%1$s"', 'acf-youtube-uploader-field'), $field_key));
             }
 
             $this->check_oauth_token();
@@ -957,10 +981,12 @@ class AcfYoutubeUploaderField extends \acf_field
 
             $uploadUrl = $response->getRequest()->getLastHeaders()['location'] ?? null;
             if ($uploadUrl) {
-                $this->log('debug', \sprintf(__('Video "%1$s" retrieved successfully', FRUGAN_AYUF_NAME), 'response'), ['response' => $response]);
+                // translators: %s: response
+                $this->log('debug', \sprintf(__('Video "%1$s" retrieved successfully', 'acf-youtube-uploader-field'), 'response'), ['response' => $response]);
                 wp_send_json_success(['upload_url' => $uploadUrl]);
             } else {
-                throw new \Exception(\sprintf(__('Unable to retrieve "%1$s" from response headers', FRUGAN_AYUF_NAME), 'location'));
+                // translators: %s: location
+                throw new \Exception(\sprintf(__('Unable to retrieve "%1$s" from response headers', 'acf-youtube-uploader-field'), 'location'));
             }
         } catch (\Google_Service_Exception $exception) {
             $this->log('error', $exception, ['response' => $response ?? null]);
@@ -978,21 +1004,25 @@ class AcfYoutubeUploaderField extends \acf_field
         try {
             $post_id = isset($_POST['post_id']) ? (int) $_POST['post_id'] : 0;
             if (empty($post_id)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'post_id'));
+                // translators: %s: post_id
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'post_id'));
             }
 
             $video_id = isset($_POST['video_id']) ? sanitize_text_field($_POST['video_id']) : '';
             if (empty($video_id)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'video_id'));
+                // translators: %s: video_id
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'video_id'));
             }
 
             if (!current_user_can('edit_post', $post_id)) {
-                throw new \Exception(\sprintf(__('Insufficient permissions to save video "%1$s"', FRUGAN_AYUF_NAME), $video_id));
+                // translators: %s: video_id
+                throw new \Exception(\sprintf(__('Insufficient permissions to save video "%1$s"', 'acf-youtube-uploader-field'), $video_id));
             }
 
             $field_key = isset($_POST['field_key']) ? sanitize_text_field($_POST['field_key']) : '';
             if (empty($field_key)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'field_key'));
+                // translators: %s: field_key
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'field_key'));
             }
 
             $result = update_field($field_key, $video_id, $post_id);
@@ -1000,7 +1030,8 @@ class AcfYoutubeUploaderField extends \acf_field
                 wp_send_json_success();
             }
 
-            throw new \UnexpectedValueException(\sprintf(__('Unable to save video "%1$s" to field "%2$s" in post ID "%3$d"', FRUGAN_AYUF_NAME), $video_id, $field_key, $post_id));
+            // translators: %1$s: video_id, %2$s: field_key, %3$d: post_id
+            throw new \UnexpectedValueException(\sprintf(__('Unable to save video "%1$s" to field "%2$s" in post ID "%3$d"', 'acf-youtube-uploader-field'), $video_id, $field_key, $post_id));
         } catch (\Exception $exception) {
             $this->log('error', $exception);
             wp_send_json_error(['message' => $exception->getMessage()]);
@@ -1012,18 +1043,21 @@ class AcfYoutubeUploaderField extends \acf_field
         try {
             $field_key = isset($_POST['field_key']) ? sanitize_text_field($_POST['field_key']) : '';
             if (empty($field_key)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'field_key'));
+                // translators: %s: field_key
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'field_key'));
             }
 
             // https://support.advancedcustomfields.com/forums/topic/get-choices-from-field-without-post_id/
             $field = get_field_object($field_key);
             if (!$field) {
-                throw new \InvalidArgumentException(\sprintf(__('Unable to retrieve field "%1$s"', FRUGAN_AYUF_NAME), $field_key));
+                // translators: %s: field_key
+                throw new \InvalidArgumentException(\sprintf(__('Unable to retrieve field "%1$s"', 'acf-youtube-uploader-field'), $field_key));
             }
 
             $playlist_id = isset($_POST['playlist_id']) ? sanitize_text_field($_POST['playlist_id']) : '';
             if (empty($playlist_id)) {
-                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', FRUGAN_AYUF_NAME), 'playlist_id'));
+                // translators: %s: playlist_id
+                throw new \InvalidArgumentException(\sprintf(__('Empty field "%1$s"', 'acf-youtube-uploader-field'), 'playlist_id'));
             }
 
             $this->check_oauth_token();
@@ -1036,7 +1070,8 @@ class AcfYoutubeUploaderField extends \acf_field
             // Quota impact: A call to this method has a quota cost of 1 unit.
             $response = $googleServiceYouTube->playlistItems->listPlaylistItems('snippet,status', $params);
 
-            $this->log('debug', \sprintf(__('Videos retrieved successfully by playlist ID "%1$s"', FRUGAN_AYUF_NAME), $playlist_id), [
+            // translators: %s: playlist_id
+            $this->log('debug', \sprintf(__('Videos retrieved successfully by playlist ID "%1$s"', 'acf-youtube-uploader-field'), $playlist_id), [
                 'privacy_status' => $field['privacy_status'],
                 'response' => $response,
             ]);
@@ -1067,7 +1102,8 @@ class AcfYoutubeUploaderField extends \acf_field
                 wp_send_json_success($result);
             }
 
-            throw new \UnexpectedValueException(\sprintf(__('Unable to retrieve videos by playlist ID "%1$s"', FRUGAN_AYUF_NAME), $playlist_id));
+            // translators: %s: playlist_id
+            throw new \UnexpectedValueException(\sprintf(__('Unable to retrieve videos by playlist ID "%1$s"', 'acf-youtube-uploader-field'), $playlist_id));
         } catch (\UnexpectedValueException $exception) {
             // FIXED - https://github.com/inpsyde/Wonolog/blob/2.x/src/HookLogFactory.php#L135
             // use `$exception->getMessage()` instead of `$exception`, because Wonolog
@@ -1093,11 +1129,11 @@ class AcfYoutubeUploaderField extends \acf_field
             }
 
             if (\is_array($message)) {
-                $message = 'Message: '.json_encode($message);
+                $message = 'Message: '.wp_json_encode($message);
             }
 
             if (!empty($context)) {
-                $message .= ' | Context: '.json_encode($context);
+                $message .= ' | Context: '.wp_json_encode($context);
             }
 
             error_log($message);
