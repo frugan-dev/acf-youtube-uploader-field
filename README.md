@@ -157,7 +157,7 @@ Once installed:
 
 #### Limitations
 
-If you use the API upload mode, please note this important notice listed [here](https://developers.google.com/youtube/v3/docs/videos/insert):
+If you use the API upload mode, please note this important notice [here](https://developers.google.com/youtube/v3/docs/videos/insert):
 
 > All videos uploaded via the `videos.insert` endpoint from unverified API projects created after July 28, 2020, will be restricted to private viewing mode. To lift this restriction, each API project must undergo an audit to verify compliance with the YouTube Terms of Service.
 
